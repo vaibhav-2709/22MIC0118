@@ -13,18 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    # Step 2: Install dependencies (if applicable)
     - name: Install Dependencies
       run: |
         if [ -f package.json ]; then
           npm install
         fi
 
-    # Step 3: Run Security Audit
     - name: Security Audit
       run: |
         if [ -f package.json ]; then
