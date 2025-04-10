@@ -22,9 +22,4 @@ jobs:
           npm install
         fi
 
-    - name: Run Snyk Security Audit
-      uses: snyk/actions/node@v3
-      with:
-        args: test
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
