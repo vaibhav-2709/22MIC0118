@@ -22,10 +22,9 @@ jobs:
           npm install
         fi
 
-    - name: Security Audit
-      run: |
-        if [ -f package.json ]; then
-          npm audit --audit-level=high
-        else
-          echo "No dependencies to scan for vulnerabilities."
-        fi
+    - name: Run Snyk Security Audit
+      uses: snyk/actions/node@v3
+      with:
+        args: test
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
